@@ -1,3 +1,4 @@
+//zmiany
 var reqAnimationFrame = (function() {
   return window[Hammer.prefixed(window, "requestAnimationFrame")] || function(callback) {
     setTimeout(callback, 1000 / 60);
@@ -36,7 +37,7 @@ function HammerCarousel(container, direction) {
 console.log('a');
 console.log('b');
          });
-  this.prevarrow.click(function(){ 
+  this.prevarrow.click(function(){
 console.log('a');
      });
 }
@@ -62,7 +63,7 @@ HammerCarousel.prototype = {
         this.container.className = className.replace('animate', '').trim();
       }
     }
-    
+
 
 var paneIndex, pos, translate;
     for (paneIndex = 0; paneIndex < this.panes.length; paneIndex++) {
@@ -74,26 +75,26 @@ var paneIndex, pos, translate;
       this.panes[paneIndex].style.mozTransform = translate;
       this.panes[paneIndex].style.webkitTransform = translate;
     }
-  
+
     this.currentIndex = showIndex;
 
 
-   
+
      //    this.nextarrow.click(function(){
      //    this.show(this.currentIndex, +1, translate);
      //    console.log('ccc');
-          
+
      //  });
-    
-     // this.prevarrow.click(function(){ 
+
+     // this.prevarrow.click(function(){
      //  console.log('ad');
      // });
-  
+
     },
 
-      
 
- 
+
+
   /**
    * handle pan
    * @param {Object} ev
@@ -111,27 +112,27 @@ var paneIndex, pos, translate;
       percent = 0;
       animate = true;
     }
-  
 
-   
+
+
     this.show(this.currentIndex, percent, animate);
-   
+
 
   }
 
- 
+
 // this.show(this.currentIndex, percent, animate);
 
 
-  
-  
 
-  
-     
+
+
+
+
 };
 // the horizontal pane scroller
 Hammer.each(document.querySelectorAll(".panes"), function(container) {
-  
+
   // setup the inner scroller
   new HammerCarousel(container, Hammer.DIRECTION_HORIZONTAL);
 
